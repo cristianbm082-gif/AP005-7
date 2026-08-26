@@ -1,0 +1,99 @@
+# sensors =  {"living room": 21, "kitchen": 23, "bedroom": 20, "pantry": 22}  --> Se crea un diccionario llamado sensors que guarda valores de tipo clave-valor que hace referencia al valor que marcan los sensores de cada habitacion
+# num_cameras = {"backyard": 6,  "garage": 2, "driveway": 1} --> Se crea otro diccionario de nombre num_cameras que hace referencia a cuantas cámaras hay en cada lugar
+
+# print(sensors)  --> Imprime el diccionario sensors completo
+# print(num_cameras) --> Imprime el diccionario num_cameras completo
+# translations = {"mountain": "orod", "bread": "bass", "friend": "mellon", "horse": "roch" }  --> Crea un diccionario llamado translations donde muestra la traduccion de las palabras
+# print(translations)   --> Imprime el diccionario translations
+
+##Verifiying an error:
+# powers = {[1, 2, 4, 8, 16]: 2, [1, 3, 9, 27, 81]: 3}  --> Produce un error que demustra que no se pueden utilizar listas como claves de un diccionario, solo como valores
+# # print(powers)  --> genera el error
+
+# children = {"von Trapp": ["Johannes", "Rosmarie", "Eleonore"] , "Corleone": ["Sonny", "Fredo", "Michael"]}  --> Se crea un diccionario donde Von Trapp es la clave y su valor es la lista de nombres y Corleone es otra clave y su valor es la lista de nombres
+# print(children)--> Imprime el diccionario children  
+
+# my_empty_dictionary = {}  --> Crea un diccionario vacio
+# print(my_empty_dictionary) --> Imprime el diccionario vacio my_empty_dictionary
+
+# menu = {"oatmeal": 3, "avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2} --> Crea un diccionario llamado menu
+# print("Before: ", menu)  --> Imprime el diccionario original
+# menu["cheesecake"] = 8   --> Agrega una nueva clave al diccionario llamada cheesecake con el valor de 8
+# print("After", menu)   --> Imprime el diccionario con las modificaciones
+# animals_in_zoo = {"dinosaurs": 0}   --> Crea un diccionario llamado animals_in_zoo
+# animals_in_zoo = {"dinosaurs": 0}   --> Reemplaza el diccionario anterior por el mismo
+# animals_in_zoo = {"horses": 2}   --> Vuelve a reemplazar el diccionario por uno nuevo
+# print(animals_in_zoo)   --> Imprime horses
+
+
+##Add multiple keys
+# sensors = {"living room": 21, "kitchen": 23, "bedroom": 20}  --> Crea el diccionario sensors con sus claves y sus valores
+# print("Before", sensors) --> Imprime el diccionario original
+
+# #If we wanted to add 3 new rooms, we could use:
+# sensors.update({"pantry": 22, "guest room": 25, "patio": 34})    --> Usa el metodo .updaete para agregar 3 claves con sus valores al diccionario
+# print("After", sensors)  --> Imprime el diccionario modificado
+
+###
+# user_ids = {"teraCoder": 9018293, "proProgrammer": 119238}  --> Crea un diccionario llamado user_ids
+# print(user_ids) --> Imprime el diccionario
+# user_ids.update({"theLooper": 138475, "stringQueen": 85739})  --> Usa .update para agregarle dos nuevas claves con sus valores al diccionario
+# print(user_ids)  --> Imprime el diccionario actualizado
+
+## Overwrite Values ##
+#We know that we can add a key by using the following syntax:
+#menu["banana"] = 3   -->  Verifica si banana esxiste en menu con el valor 3, si no existe la agrega con el valor 3, pero sino reemplaza el valor que tenga por 3
+# menu = {"oatmeal": 3, "avocado toast": 6, "carrot juice": 5, "blueberry muffin": 2}  --> Crea menu
+# print("Before: ", menu)  --> Imprime el diccionario menu original
+# menu["oatmeal"] = 5  --> Reemplaza el valor de oatmeal anterior(3), con 5
+# print("After", menu)  --> Imprime el menu con las actualizaciones
+
+## Notice the value of "oatmeal" has now changed to 5.  
+# oscar_winners = {"Best Picture": "La La Land", "Best Actor": "Casey Affleck", "Best Actress": "Emma Stone", "Animated Feature": "Zootopia"}  --> Crea un diccionario llamado oscar_winners
+# print("Before", oscar_winners)   --> Imprime el diccionario original
+# print()   --> Imprime una linea vacia
+# oscar_winners.update({"Supporting Actress": "Viola Davis"})   --> Usa .update para agregar una nueva clave con su valor
+# print("After1", oscar_winners)  --> Imprime el diccionario con su primera modificacion
+# print()  --> Crea una linea vacia
+# oscar_winners["Best Picture"] = "Moonlight"  --> Modifica por segunda  vez el diccionario
+# print("After2", oscar_winners)   --> Imprime el diccionario con su segunda modificacion
+
+
+###Dict Comprehensions
+#Let’s say we have two lists that we want to combine into a 
+#dictionary, like a list of students and a list of their heights, 
+#in inches:
+
+names = ['Jenny', 'Alexus', 'Sam', 'Grace']   --> Crea una lista llamada names con 4 nombres
+heights = [61, 70, 67, 64]   --> Crea otra lista con 4 alturas
+
+#Python allows you to create a dictionary using 
+# a dict comprehension, with this syntax:
+
+# zipStudents = zip(names, heights)
+# print("zipStudents: ", zipStudents)
+
+# students = {key:value for key, value in zip(names, heights)}
+# #students is now {'Jenny': 61, 'Alexus': 70, 'Sam': 67, 'Grace': 64}
+# print(students)
+
+# #zip() combines two lists into an iterator of tuples with the list elements paired together. This dict comprehension:
+
+# drinks = ["espresso", "chai", "decaf", "drip"]
+# caffeine = [64, 40, 0, 120]
+
+# zipped_drinks = zip(drinks, caffeine)
+# print(zipped_drinks)
+
+# drinks_to_caffeine = {key:value for key, value in zipped_drinks}
+# print(drinks_to_caffeine)
+
+songs = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations"]
+playcounts = [78, 29, 44, 21, 89, 5]
+plays = {key:value for key, value in zip(songs, playcounts)}
+print(plays)
+plays.update({"Purple Haze": 1})
+plays.update({"Respect": 94})
+print("After: ", plays)
+library = {"The Best Songs": plays, "Sunday Feelings": {}}
+print(library)
