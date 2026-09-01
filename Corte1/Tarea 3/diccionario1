@@ -64,36 +64,36 @@
 #dictionary, like a list of students and a list of their heights, 
 #in inches:
 
-names = ['Jenny', 'Alexus', 'Sam', 'Grace']   --> Crea una lista llamada names con 4 nombres
-heights = [61, 70, 67, 64]   --> Crea otra lista con 4 alturas
+names = ['Jenny', 'Alexus', 'Sam', 'Grace']   # --> Crea una lista llamada names con 4 nombres
+heights = [61, 70, 67, 64]   # --> Crea otra lista llamada heights con 4 alturas en pulgadas
 
 #Python allows you to create a dictionary using 
 # a dict comprehension, with this syntax:
 
-# zipStudents = zip(names, heights)
-# print("zipStudents: ", zipStudents)
+# zipStudents = zip(names, heights)  --> Combina las listas names y heights emparejando sus elementos en un objeto zip
+# print("zipStudents: ", zipStudents)  --> Imprime la referencia en memoria del objeto zip (zipStudents)
 
-# students = {key:value for key, value in zip(names, heights)}
-# #students is now {'Jenny': 61, 'Alexus': 70, 'Sam': 67, 'Grace': 64}
-# print(students)
+# students = {key:value for key, value in zip(names, heights)}  --> Usa una comprensión de diccionario para convertir el zip de nombres y alturas en un diccionario clave:valor
+# #students is now {'Jenny': 61, 'Alexus': 70, 'Sam': 67, 'Grace': 64}  --> Muestra como queda el diccionario emparejado
+# print(students)  --> Imprime el diccionario de estudiantes con sus respectivas alturas
 
 # #zip() combines two lists into an iterator of tuples with the list elements paired together. This dict comprehension:
 
-# drinks = ["espresso", "chai", "decaf", "drip"]
-# caffeine = [64, 40, 0, 120]
+# drinks = ["espresso", "chai", "decaf", "drip"]  --> Crea una lista con nombres de bebidas
+# caffeine = [64, 40, 0, 120]  --> Crea una lista con los miligramos de cafeína de cada bebida
 
-# zipped_drinks = zip(drinks, caffeine)
-# print(zipped_drinks)
+# zipped_drinks = zip(drinks, caffeine)  --> Empareja la lista de bebidas con la lista de cafeína usando zip()
+# print(zipped_drinks)  --> Imprime la referencia en memoria del objeto zip creado
 
-# drinks_to_caffeine = {key:value for key, value in zipped_drinks}
-# print(drinks_to_caffeine)
+# drinks_to_caffeine = {key:value for key, value in zipped_drinks}  --> Construye un diccionario clave:valor relacionando cada bebida con su nivel de cafeína mediante comprensión de diccionario
+# print(drinks_to_caffeine)  --> Imprime el diccionario drinks_to_caffeine resultante
 
-songs = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations"]
-playcounts = [78, 29, 44, 21, 89, 5]
-plays = {key:value for key, value in zip(songs, playcounts)}
-print(plays)
-plays.update({"Purple Haze": 1})
-plays.update({"Respect": 94})
-print("After: ", plays)
-library = {"The Best Songs": plays, "Sunday Feelings": {}}
-print(library)
+songs = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations"]  # --> Crea una lista llamada songs con títulos de canciones
+playcounts = [78, 29, 44, 21, 89, 5]  # --> Crea una lista llamada playcounts con el número de reproducciones de cada canción
+plays = {key:value for key, value in zip(songs, playcounts)}  # --> Crea un diccionario llamado plays combinando las canciones (claves) con sus reproducciones (valores) mediante comprensión de diccionario
+print(plays)  # --> Imprime el diccionario plays original
+plays.update({"Purple Haze": 1})  # --> Agrega la nueva canción "Purple Haze" con 1 reproducción al diccionario plays usando .update()
+plays.update({"Respect": 94})  # --> Actualiza el número de reproducciones de la canción existente "Respect" a 94 usando .update()
+print("After: ", plays)  # --> Imprime el diccionario plays actualizado con los cambios
+library = {"The Best Songs": plays, "Sunday Feelings": {}}  # --> Crea un diccionario anidado llamado library que contiene a "plays" como valor de la clave "The Best Songs" y un diccionario vacío en "Sunday Feelings"
+print(library)  # --> Imprime el diccionario anidado library
