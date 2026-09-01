@@ -1,1 +1,119 @@
+# #### Get A Key
+# #you can access the values in it by providing the key:
 
+# building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}  --> Crea un diccionario llamado building_heights con nombres de edificios y sus alturas
+# print(building_heights["Burj Khalifa"]) # Prints 828  --> Imprime el valor asociado a la clave "Burj Khalifa" (828)
+# print(building_heights["Ping An"]) # Prints 599  --> Imprime el valor asociado a la clave "Ping An" (599)
+
+# zodiac_elements = {"water": ["Cancer", "Scorpio", "Pisces"], "fire": ["Aries", "Leo", "Sagittarius"], "earth": ["Taurus", "Virgo", "Capricorn"], "air":["Gemini", "Libra", "Aquarius"]}  --> Crea un diccionario con los elementos del zodiaco como claves y listas de signos como valores
+# print(zodiac_elements["earth"])  --> Imprime la lista de signos pertenecientes al elemento "earth"
+# print(zodiac_elements["fire"])  --> Imprime la lista de signos pertenecientes al elemento "fire"
+
+# ## Get an Invalid Key
+
+# building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}  --> Crea de nuevo el diccionario building_heights
+# print(building_heights["Landmark 81"])  --> Genera un error KeyError porque la clave "Landmark 81" no existe en el diccionario
+
+# ##One way to avoid this error is to first check if the key exists in the dictionary:
+# key_to_check = "Landmark 81"  --> Asigna el texto "Landmark 81" a la variable key_to_check
+
+# if key_to_check in building_heights:  --> Comprueba si la clave almacenada en key_to_check existe dentro del diccionario
+#    print(building_heights["Landmark 81"])  --> Si existe la clave, imprime su valor de forma segura
+
+# zodiac_elements = {"water": ["Cancer", "Scorpio", "Pisces"], "fire": ["Aries", "Leo", "Sagittarius"], "earth": ["Taurus", "Virgo", "Capricorn"], "air":["Gemini", "Libra", "Aquarius"]}  --> Declara el diccionario zodiac_elements
+# zodiac_elements["energy"] = "Not a Zodiac element"  --> Agrega la clave "energy" con el valor "Not a Zodiac element" al diccionario
+
+# if "energy" in zodiac_elements:  --> Evalúa si la clave "energy" está presente en el diccionario
+#    print(zodiac_elements["energy"])  --> Imprime el valor de "energy" al confirmarse que sí existe
+
+# ##Safely Get a Key
+# building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601, "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}  --> Crea el diccionario building_heights
+
+# #this line will return 632:
+# building_heights.get("Shanghai Tower")  --> Usa el método .get() para obtener el valor de "Shanghai Tower" (retorna 632)
+
+# #this line will return None:
+# building_heights.get("My House")  --> Usa .get() con una clave inexistente, lo que retorna None sin generar error
+
+# ###
+# user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}  --> Crea un diccionario user_ids con usuarios y sus IDs
+# user_ids.get("teraCoder")  --> Intenta obtener el valor de la clave "teraCoder" mediante .get()
+
+# if user_ids.get("teraCoder") == None:  --> Verifica si la clave "teraCoder" no existe en el diccionario
+#    tc_id = 1000  --> Asigna el valor 1000 a tc_id si no se encontró la clave
+# else: 
+#    tc_id = user_ids.get("teraCoder")  --> Asigna el valor real encontrado en la clave a tc_id
+
+# print(tc_id)  --> Imprime la variable tc_id (100019)
+
+# if user_ids.get("superStackSmash") == None:  --> Verifica si la clave "superStackSmash" no existe en el diccionario
+#     stack_id = 100000  --> Asigna 100000 a stack_id al ser la clave inexistente (retorna None)
+
+# print(stack_id)  --> Imprime la variable stack_id (100000)
+
+# ###Delete a Key
+#.pop() works to delete items from a dictionary, when you know the key value.
+#raffle = {223842: "Teddy Bear", 872921: "Concert Tickets", 320291: "Gift Basket", 412123: "Necklace", 298787: "Pasta Maker"}  --> Crea el diccionario raffle que relaciona números de boletos con premios
+#print(raffle.pop(320291, "No Prize"))  --> Elimina la clave 320291 del diccionario e imprime el valor que tenía ("Gift Basket")
+## Prints "Gift Basket"
+#print(raffle)  --> Imprime el diccionario raffle sin el elemento eliminado
+# # Prints {223842: "Teddy Bear", 872921: "Concert Tickets", 412123: "Necklace", 298787: "Pasta Maker"}
+# print(raffle.pop(100000, "No Prize"))  --> Intenta eliminar la clave 100000 inexistente e imprime el valor por defecto provisto ("No Prize")
+# # Prints "No Prize"
+# print(raffle)  --> Imprime el diccionario manteniendo la misma estructura ya que no se eliminó nada
+# # Prints {223842: "Teddy Bear", 872921: "Concert Tickets", 412123: "Necklace", 298787: "Pasta Maker"}
+# print(raffle.pop(872921, "No Prize"))  --> Elimina la clave 872921 e imprime su valor asociado ("Concert Tickets")
+# # Prints "Concert Tickets"
+# print(raffle)  --> Imprime el diccionario mostrando solo los 3 premios restantes
+# # Prints {223842: "Teddy Bear", 412123: "Necklace", 298787: "Pasta Maker"}
+
+# available_items = {"health potion": 10, "cake of the cure": 5, "green elixir": 20, "strength sandwich": 25, "stamina grains": 15, "power stew": 30}  --> Crea un diccionario con objetos de un juego y sus valores de salud
+# health_points = 20  --> Inicializa la variable health_points con un valor de 20
+
+# health_points += available_items.pop("stamina grains", 0)  --> Elimina "stamina grains" del diccionario y suma su valor (15) a health_points
+# health_points += available_items.pop("power stew", 0)  --> Elimina "power stew" del diccionario y suma su valor (30) a health_points
+# health_points += available_items.pop("mystic bread", 0)  --> Intenta eliminar "mystic bread" inexistente y suma el valor por defecto (0) a health_points
+
+# print(available_items)  --> Imprime el diccionario disponible con los elementos consumidos ya eliminados
+# print(health_points)  --> Imprime el total acumulado de health_points (65)
+
+# ##Get All Keys
+# test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}  --> Crea un diccionario con estudiantes y sus listas de calificaciones
+# print(list(test_scores))  --> Convierte las claves del diccionario en una lista e imprime solo los nombres de los estudiantes
+# # Prints ["Grace", "Jeffrey", "Sylvia", "Pedro", "Martin", "Dina"]
+
+# for student in test_scores.keys():  --> Recorre una a una las claves (nombres de estudiantes) usando el método .keys()
+#  print(student)  --> Imprime el nombre del estudiante de la iteración actual
+
+# user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}  --> Crea un diccionario user_ids
+# num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}  --> Crea un diccionario num_exercises con los temas y la cantidad de ejercicios por tema
+
+# users = user_ids.keys()  --> Obtiene un objeto dict_keys con todas las claves de user_ids
+# lessons = num_exercises.keys()  --> Obtiene un objeto dict_keys con todas las claves de num_exercises
+
+# print(users)  --> Imprime la vista de claves dict_keys del diccionario user_ids
+# print(lessons)  --> Imprime la vista de claves dict_keys del diccionario num_exercises
+
+##Get All Values
+# test_scores = {"Grace":[80, 72, 90], "Jeffrey":[88, 68, 81], "Sylvia":[80, 82, 84], "Pedro":[98, 96, 95], "Martin":[78, 80, 78], "Dina":[64, 60, 75]}  --> Declara el diccionario test_scores
+
+# for score_list in test_scores.values():  --> Recorre solo los valores (listas de notas) utilizando el método .values()
+#  print(score_list)  --> Imprime cada lista de notas individualmente
+# num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}  --> Crea el diccionario num_exercises
+
+# total_exercises = 0  --> Inicializa un contador acumulador en 0
+
+# for exercises in num_exercises.values():  --> Recorre cada valor numérico del diccionario num_exercises
+#    total_exercises += exercises  --> Suma la cantidad de ejercicios de cada tema a total_exercises
+# print(total_exercises)  --> Imprime la suma total acumulada de todos los ejercicios (115)
+
+##Get All Items
+# biggest_brands = {"Apple": 184, "Google": 141.7, "Microsoft": 80, "Coca-Cola": 69.7, "Amazon": 64.8}  --> Crea un diccionario con marcas y su valor en miles de millones
+
+# for company, value in biggest_brands.items():  --> Recorre simultáneamente las claves y valores mediante tuplas usando el método .items()
+#  print(company + " has a value of " + str(value) + " billion dollars. ")  --> Imprime un mensaje formateado concatenando el nombre de la compañía y su valor conversado a texto
+
+# pct_women_in_occupation = {"CEO": 28, "Engineering Manager": 9, "Pharmacist": 58, "Physician": 40, "Lawyer": 37, "Aerospace Engineer": 9}  --> Crea un diccionario con profesiones y el porcentaje de mujeres ocupadas
+
+# for occupation, percentage in pct_women_in_occupation.items():  --> Desempaqueta cada par clave-valor del diccionario usando .items()
+#    print("Women make up " + str(percentage) + " percent of " + occupation + "s.")  --> Imprime una oración estructurada concatenando el porcentaje e ocupación
