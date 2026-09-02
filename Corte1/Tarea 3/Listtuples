@@ -1,0 +1,133 @@
+#################LISTAS####################
+###########################################
+# --> Estos comentarios sirven como título para indicar que comenzamos a trabajar con LISTAS
+
+my_lista = ['Rojo', 'Azul', 'Amarillo', 'Naranja', 'Violeta', 'Verde'] # --> Crea una lista llamada my_lista que contiene diferentes colores
+
+#input() # --> Espera a que el usuario introduzca algo antes de continuar
+
+print(my_lista) # --> Imprime la lista my_lista completa
+print(type(my_lista)) # --> Muestra el tipo de dato de my_lista, que en este caso es una lista
+print(my_lista[2]) # --> Accede e imprime el elemento que está en la posición 2 de la lista
+
+print("my_lista size: ", len(my_lista)) # --> len() cuenta cuántos elementos tiene la lista y print() muestra ese número
+print(my_lista[0:2]) # --> Muestra los elementos desde la posición 0 hasta antes de la posición 2
+print(my_lista[:2]) # --> Muestra los elementos desde el inicio hasta antes de la posición 2
+
+my_lista.append('Blanco')      #Agrega elemento al final de la lista
+# --> append() agrega el elemento 'Blanco' al final de my_lista
+print(my_lista) # --> Imprime la lista después de agregar 'Blanco'
+
+my_lista.insert(3, 'Negro') # --> insert() agrega 'Negro' en la posición 3 de la lista
+print(my_lista) # --> Imprime la lista después de insertar 'Negro'
+
+my_lista.extend(['Marron', 'Gris'])   #Concatena a otra lista
+# --> extend() agrega los elementos 'Marron' y 'Gris' a my_lista
+print(my_lista) # --> Imprime la lista después de agregar los nuevos elementos
+
+print(my_lista.index('Azul')) # --> index() busca 'Azul' y devuelve la posición donde se encuentra
+
+#my_lista.remove('Magenta')
+# --> Esta línea está comentada, por lo tanto Python no la ejecuta
+# --> remove() serviría para eliminar el elemento 'Magenta' de la lista
+
+my_lista.remove('Marron') # --> remove() busca y elimina el elemento 'Marron' de la lista
+print(my_lista) # --> Imprime la lista después de eliminar 'Marron'
+
+my_lista.insert(8, 'Marron') # --> Inserta 'Marron' en la posición 8 de la lista
+print(my_lista) # --> Imprime la lista después de insertar nuevamente 'Marron'
+
+print(my_lista.pop()) # --> pop() elimina y devuelve el último elemento de la lista, por eso también se imprime
+
+size = len(my_lista) # --> Guarda en la variable size la cantidad de elementos que tiene my_lista
+print("size = ", size) # --> Imprime la cantidad de elementos almacenados en size
+
+#print(my_lista.pop(size))
+# --> Esta línea está comentada, por lo tanto no se ejecuta
+
+my_lista_3 = my_lista*3 # --> Crea my_lista_3 repitiendo todos los elementos de my_lista tres veces
+print("my_lista_3: ", my_lista_3) # --> Imprime la nueva lista repetida tres veces
+
+print("Sort:") # --> Imprime el texto "Sort:"
+print() # --> Imprime una línea vacía
+
+my_listaSort = my_lista.sort() # --> sort() ordena my_lista y guarda el resultado en my_listaSort
+print(my_listaSort) # --> Imprime el contenido de my_listaSort
+
+my_NumList = [10, 9, 8, 7, 6 , 5 , 4, 3, 2, 1] # --> Crea una lista de números enteros
+print("Ordering my_NumList: ") # --> Imprime un mensaje indicando que se va a ordenar la lista
+my_NumList.sort() # --> Ordena los números de menor a mayor
+print(my_NumList) # --> Imprime la lista ya ordenada
+
+#OrderedLList = my_NumList.sort()
+# --> Esta línea está comentada, por lo tanto no se ejecuta
+
+#print(my_listaSort)
+# --> Esta línea también está comentada y no se ejecuta
+
+#Ordenando lista de mayor a menor
+# --> Este comentario indica que la siguiente instrucción ordenará la lista de mayor a menor
+
+my_NumList.sort(reverse = True) # --> Ordena my_NumList de mayor a menor usando reverse=True
+print("De menor a mayor: ", my_NumList) # --> Imprime el texto y la lista ordenada
+
+
+
+#################TUPLAS####################
+###########################################
+# --> Estos comentarios indican que ahora comienza la sección de TUPLAS
+
+# Corresponde a una estructura similar a las listas, la diferencia está
+# en que no se pueden modificar una vez creadas, es decir que son inmutables:
+# --> Una tupla es parecida a una lista, pero sus elementos no se pueden modificar después de crearla
+
+#Convertir una lista a tupla:prin
+# --> Este comentario indica que se va a convertir una lista en una tupla
+
+print("###########################") # --> Imprime una línea para separar visualmente las secciones
+print("###########################") # --> Imprime otra línea
+print("###########################") # --> Imprime otra línea
+print("############TUPLAS#########") # --> Imprime el título de la sección de tuplas
+
+my_tupla = tuple(my_lista) # --> Convierte my_lista en una tupla y guarda el resultado en my_tupla
+print() # --> Imprime una línea vacía
+print() # --> Imprime otra línea vacía
+print("my_tuple: ", my_tupla) # --> Imprime el contenido de la tupla
+
+print(my_tupla[0]) # --> Accede e imprime el elemento que está en la posición 0
+print(my_tupla[2]) # --> Accede e imprime el elemento que está en la posición 2
+
+#Evaluar si un elemento está contenido en la tupla (Devuelve un valor booleano)
+# --> El operador in permite comprobar si un elemento se encuentra dentro de la tupla
+
+print('Rojo' in my_tupla) # --> Comprueba si 'Rojo' está dentro de my_tupla y devuelve True o False
+print(my_tupla.count('Rojo')) # --> count() cuenta cuántas veces aparece 'Rojo' dentro de la tupla
+
+#Tupla con un solo elemento
+# --> Este comentario indica que se va a crear una tupla con un solo elemento
+
+my_tupla_unitaria = ('Blanco') # --> Guarda 'Blanco' en my_tupla_unitaria
+print(my_tupla_unitaria) # --> Imprime el contenido de my_tupla_unitaria
+
+#Empaquetado de tupla, tupla sin paréntesis
+# --> Una tupla puede crearse sin escribir los paréntesis, separando sus elementos por comas
+
+my_tupla = 'Gaspar', 5, 8, 1999 # --> Crea una tupla con cuatro elementos
+print(my_tupla) # --> Imprime la tupla completa
+
+#Desempaquetado de tupla, se guardan los valores en orden de las variables
+# --> El desempaquetado toma cada elemento de la tupla y lo guarda en una variable diferente
+
+nombre, dia, mes, año = my_tupla # --> Guarda 'Gaspar' en nombre, 5 en dia, 8 en mes y 1999 en año
+print(nombre) # --> Imprime el valor almacenado en nombre
+print(dia) # --> Imprime el valor almacenado en dia
+print(mes) # --> Imprime el valor almacenado en mes
+print(año) # --> Imprime el valor almacenado en año
+
+print("Nombre: ", nombre, " - Dia:", dia, " - Mes: ", mes, "- Año: ", año) # --> Imprime todos los datos de la tupla usando las variables
+
+#Convertir una tupla en una lista
+# --> Este comentario indica que se va a convertir nuevamente una tupla en una lista
+
+my_lista2=list(my_tupla) # --> Convierte my_tupla en una lista y guarda el resultado en my_lista2
+print(my_lista2) # --> Imprime la nueva lista
