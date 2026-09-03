@@ -1,0 +1,30 @@
+from machine import ADC, Pin
+from time import sleep
+
+# Pin donde está conectado el terminal central del potenciómetro
+pot = ADC(Pin(34))
+
+# Resolución de 12 bits: valores de 0 a 4095
+pot.width(ADC.WIDTH_12BIT)
+
+while True:
+
+    # Leer el valor analógico
+    valor = pot.read()
+
+    # Mostrar el valor ADC
+    print("Valor ADC:", valor)
+
+    # Determinar el rango
+    if valor <= 1500:
+        print("Rango: BAJO")
+
+    elif valor <= 2500:
+        print("Rango: MEDIO")
+
+    else:
+        print("Rango: ALTO")
+
+    print("--------------------")
+
+    sleep(0.5)
