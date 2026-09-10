@@ -28,3 +28,45 @@ while True:
     print("--------------------")
 
     sleep(0.5)
+
+
+
+
+const int potPin = 34;
+
+void setup() 
+{
+  Serial.begin(115200);
+
+
+  analogReadResolution(12);
+}
+
+void loop() 
+{
+
+
+  int valor = analogRead(potPin);
+
+
+  Serial.print("Valor ADC: ");
+  Serial.println(valor);
+
+
+  if (valor <= 1500) 
+  {
+    Serial.println("Rango: BAJO");
+  }
+  else if (valor <= 2500) 
+  {
+    Serial.println("Rango: MEDIO");
+  }
+  else 
+  {
+    Serial.println("Rango: ALTO");
+  }
+
+  Serial.println("--------------------");
+
+  delay(500);
+}
