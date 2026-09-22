@@ -131,3 +131,6 @@ print("Nombre: ", nombre, " - Dia:", dia, " - Mes: ", mes, "- Año: ", año) # -
 
 my_lista2=list(my_tupla) # --> Convierte my_tupla en una lista y guarda el resultado en my_lista2
 print(my_lista2) # --> Imprime la nueva lista
+
+
+https://colab.research.google.com/drive/138QvRK5mpF5KGslEZxaj-o1mLgbjlhBO#scrollTo=JS6W9YCckkRz
